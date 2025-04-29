@@ -1,0 +1,10 @@
+pandas==2.2.3
+numpy==2.2.5
+scipy==1.15.2
+statsmodels==0.14.4
+SQLAlchemy==2.0.40
+psycopg2-binary==2.9.10
+jupyterlab==4.4.1
+matplotlib==3.10.1
+seaborn==0.13.2
+plotly==6.0.1
