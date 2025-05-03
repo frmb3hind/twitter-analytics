@@ -81,5 +81,42 @@ _If you want to run the pipeline yourself:_
 5. **Stable text stats** — tweets average ~40 words and ~5–6 characters per word, simplifying NLP feature engineering.  
 
 ---
+## 📊 Hashtag A/B Test
+
+We perform a retrospective A/B-style analysis to measure the impact of hashtags:
+
+### 🔬 Option 1: Run the Notebook
+
+```bash
+jupyter lab notebooks/ab_test_hashtags.ipynb
+```
+
+> Execute all cells in order.
+
+---
+
+### ⚙️ Option 2: Run the Script
+
+```bash
+./scripts/analyze_ab_test.py
+```
+
+This script will:
+
+- Load data from your Postgres database.
+- Define two groups:
+  - **Group A** — tweets without hashtags.
+  - **Group B** — tweets with hashtags.
+- Stratify `followers_count` into 10 quantile bins.
+- Compute average values for:
+  - retweets,
+  - favourites,
+  - engagement rate.
+- Perform:
+  - Welch’s t-test,
+  - Mann–Whitney U test.
+- Print a summary table and p-values.
+
+---
 
 Enjoy exploring and extending this analysis!
